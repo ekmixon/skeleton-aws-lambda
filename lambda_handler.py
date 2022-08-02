@@ -37,10 +37,8 @@ def handler(event, context):
 
     logging.debug(f"AWS Event was: {event}")
 
-    result = eal.do_lambda_functionality(
+    return eal.do_lambda_functionality(
         region=event["region"],
         invocation_time=event["time"],
         message=os.environ["message"],
     )
-
-    return result
